@@ -1,6 +1,4 @@
 .promo {
-  margin-left: 20px;
-  margin-right: 20px;
   margin-top: 39px;
   margin-bottom: 35px;
 }
@@ -12,8 +10,42 @@
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
-  color: #ffffff;
+  color: @bg-color;
   text-align: center;
-  background-color: #68b738;
+  background-color: @main-color-button;
   background-image: url("../img/gift-photo-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: @tablet-width) {
+  .promo {
+    margin-top: 69px;
+    margin-bottom: 76px;
+  }
+
+  .promo__text {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 420px;
+    padding-right: 120px;
+    text-align: left;
+    background-image: url("../img/gift-photo-tablet@1x.jpg");
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .promo {
+    margin: 0;
+  }
+
+  .promo__text {
+    padding-top: 202px;
+    padding-left: 37px;
+    padding-right: 38px;
+    padding-bottom: 28px;
+    background-image: url("../img/gift-photo-desktop@1x.jpg");
+    text-align: center;
+  }
 }

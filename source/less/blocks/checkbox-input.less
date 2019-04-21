@@ -1,4 +1,9 @@
 .checkbox-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-input__item {
   margin-bottom: 13px;
 
   &:last-of-type {
@@ -7,7 +12,42 @@
 }
 
 .checkbox-input__label {
+  padding-left: 45px;
+  padding-top: 6px;
+  padding-bottom: 8px;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 18px;
+}
+
+@media (min-width: @tablet-width) {
+  .checkbox-input {
+    width: 630px;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .checkbox-input__item {
+    width: 310px;
+    margin-bottom: 35px;
+  }
+
+  .checkbox-input__label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .checkbox-input {
+    width: 1220px;
+  }
+
+  .checkbox-input__item {
+    width: 245px;
+  }
 }

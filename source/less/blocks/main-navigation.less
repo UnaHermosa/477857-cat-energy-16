@@ -1,21 +1,29 @@
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 .main-navigation__list {
+  display: flex;
+  flex-direction: column;
   position: relative;
   .order-reset();
-  min-width: 320px;
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid @border-color;
   text-align: center;
 }
 
 .main-navigation__item {
   display: block;
-  font-size: 20px;
-  font-weight: 700;
-  color: #000000;
-  line-height: 20px;
   padding-top: 24px;
   padding-bottom: 24px;
   text-decoration: none;
-  border-bottom: 1px solid #f2f2f2;
+  text-transform: uppercase;
+  border-bottom: 1px solid @border-color;
+  cursor: pointer;
 
   &:hover {
     color: rgba(0, 0, 0, 0.6);
@@ -26,7 +34,14 @@
   }
 
   &:visited {
-    color: #000000;
+    color: @main-color-font;
+  }
+
+  &--current,
+  &--current:hover,
+  &--current:active,
+  &--current:visited {
+    color: @main-color-font;
   }
 }
 
@@ -36,4 +51,84 @@
   right: 20px;
   width: 18px;
   height: 18px;
+}
+
+@media (min-width: @tablet-width) {
+  .main-navigation {
+    box-sizing: border-box;
+    flex-direction: row;
+    width: 548px;
+    padding-left: 80px;
+    padding-right: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: @main-color-font;
+  }
+
+  .main-navigation__list {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 438px;
+    border-top: none;
+    margin-top: 32px;
+  }
+
+  .main-navigation__item {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .main-navigation__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-navigation {
+    width: 720px;
+    padding-left: 130px;
+    padding-right: 110px;
+
+    &--index {
+      padding-bottom: 590px;
+      background-color: @main-color-button;
+      background-image: url("../img/index-background-desktop@1x.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .main-navigation__list {
+    margin-top: 65px;
+    width: 480px;
+  }
+
+  .main-navigation__item {
+    font-size: 20px;
+  }
+
+  .main-navigation__item--index {
+    color: @font-color-button;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:visited {
+      color: @font-color-button;
+    }
+
+    &--current,
+    &--current:hover,
+    &--current:active,
+    &--current:visited {
+      color: @font-color-button;
+    }
+  }
 }
