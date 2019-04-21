@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=width-device, initial-scale=1">
     <title>Каталог продукции Cat Energy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
     <header class="page-header">
@@ -20,7 +21,7 @@
             <a class="main-navigation__item" href="index.html">Главная</a>
           </li>
           <li>
-            <a class="main-navigation__item">Каталог продукции</a>
+            <a class="main-navigation__item main-navigation__item--current">Каталог продукции</a>
           </li>
           <li>
             <a class="main-navigation__item" href="form.html">Подбор программы</a>
@@ -104,7 +105,7 @@
           </li>
           <li class="goods__item">
             <a href="product-4.html">
-              <img class="goods__item-img" src="img/fish-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy Pro 500 грамм со вкусом рыбы">
+              <img class="goods__item-img" src="img/fish-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy Pro 1000 грамм со вкусом рыбы">
             </a>
             <div class="goods__item-description">
               <a class="goods__item-name" href="product-4.html">Cat Energy Pro 1000 г</a>
@@ -208,51 +209,61 @@
       </section>
       <section class="extras">
         <h2 class="extras__title">Дополнительные товары</h2>
-        <ul class="extras__list">
-          <li class="extras__item">
-            <span class="extras__item-name">Сахарозаменитель</span>
-            <div class="extras__item-wrapper">
-              <span class="extras__item-price">1 упаковка (100 г)</span>
-              <span class="extras__item-price">200 Р.</span>
-            </div>
-            <a class="button button--order" href="order.html">Заказать</a>
-          </li>
-          <li class="extras__item">
-            <span class="extras__item-name">Питьевая вода</span>
-            <div class="extras__item-wrapper">
-              <span class="extras__item-price">5 литров</span>
-              <span class="extras__item-price">50 Р.</span>
-            </div>
-            <a class="button button--order" href="order.html">Заказать</a>
-          </li>
-          <li class="extras__item">
-            <span class="extras__item-name">Молоко</span>
-            <div class="extras__item-wrapper">
-              <span class="extras__item-price">1 литр</span>
-              <span class="extras__item-price">100 Р.</span>
-            </div>
-            <a class="button button--order" href="order.html">Заказать</a>
-          </li>
-          <li class="extras__item">
-            <span class="extras__item-name">Витамины</span>
-            <div class="extras__item-wrapper">
-              <span class="extras__item-price">1 упаковка (30 г)</span>
-              <span class="extras__item-price">300 Р.</span>
-            </div>
-            <a class="button button--order" href="order.html">Заказать</a>
-          </li>
-        </ul>
-      </section>
-      <section class="promo">
-        <h2 class="visually-hidden">Выгодное предложение!</h2>
-        <p class="promo__text">Закажите все и получите чехол для кота в подарок!</p>
+        <div class="extras__wrapper">
+          <ul class="extras__list">
+            <li class="extras__item">
+              <div class="extras__item-wrapper">
+                <span class="extras__item-name">Сахарозаменитель</span>
+                <div class="extras__item-price-wrapper">
+                  <span class="extras__item-price">1 упаковка (100 г)</span>
+                  <span class="extras__item-price">200 Р.</span>
+                </div>
+              </div>
+              <a class="button button--order button--extra" href="order.html">Заказать</a>
+            </li>
+            <li class="extras__item">
+              <div class="extras__item-wrapper">
+                <span class="extras__item-name">Питьевая вода</span>
+                <div class="extras__item-price-wrapper">
+                  <span class="extras__item-price">5 литров</span>
+                  <span class="extras__item-price">50 Р.</span>
+                </div>
+              </div>
+              <a class="button button--order button--extra" href="order.html">Заказать</a>
+            </li>
+            <li class="extras__item">
+              <div class="extras__item-wrapper">
+                <span class="extras__item-name">Молоко</span>
+                <div class="extras__item-price-wrapper">
+                  <span class="extras__item-price">1 литр</span>
+                  <span class="extras__item-price">100 Р.</span>
+                </div>
+              </div>
+              <a class="button button--order button--extra" href="order.html">Заказать</a>
+            </li>
+            <li class="extras__item">
+              <div class="extras__item-wrapper">
+                <span class="extras__item-name">Витамины</span>
+                <div class="extras__item-price-wrapper">
+                  <span class="extras__item-price">1 упаковка (30 г)</span>
+                  <span class="extras__item-price">300 Р.</span>
+                </div>
+              </div>
+              <a class="button button--order button--extra" href="order.html">Заказать</a>
+            </li>
+          </ul>
+          <div class="promo">
+            <h2 class="visually-hidden">Выгодное предложение!</h2>
+            <p class="promo__text">Закажите все <br> и получите чехол для <br> кота в подарок!</p>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="page-footer">
       <section class="page-footer__contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <div class="page-footer__contacts-wrapper">
-          <p class="page-footer__contacts--invite">Приглашаем к сотрудничеству дилеров!</p>
+          <p class="page-footer__contacts--invite">Приглашаем <br> к сотрудничеству <br> дилеров!</p>
           <p class="page-footer__contacts--address">ул. Большая Конюшенная, д. 19/8
 Санкт-Петербург</p>
         </div>
@@ -284,7 +295,10 @@
         </ul>
         <div class="page-footer__partner">
           <a class="page-footer__partner-link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span>Наш пратнер - HTML Academy</span>
+            <span>HTML Academy</span>
+          </a>
+          <a class="page-footer__partner-link-logo">
+            <img src="img/htmlacademy.svg" width="27" height="34" alt="Логотип HTML Academy">
           </a>
         </div>
       </section>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=width-device, initial-scale=1">
     <title>Подбор программы питания Cat Energy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
     <header class="page-header">
@@ -23,7 +24,7 @@
             <a class="main-navigation__item" href="catalog.html">Каталог продукции</a>
           </li>
           <li>
-            <a class="main-navigation__item">Подбор программы</a>
+            <a class="main-navigation__item main-navigation__item--current">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -32,48 +33,50 @@
       <section class="order">
         <h1 class="order__title">Подбор программы</h1>
         <form class="order__form" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="order__form-type">
-            <p class="order__form-legend">Заполните анкету и мы подберем
+          <p class="order__form-legend">Заполните анкету и мы подберем <br>
 программу питания для вашего кота</p>
-            <ul class="order__form-list">
-              <li class="text-input">
-                <label class="text-input__label" for="cat-name">Имя:<sup>*</sup></label>
-            <input class="text-input__field" type="text" name="name" id="cat-name" placeholder="Барсик" required>
-              </li>
-              <li class="text-input">
-                <label class="text-input__label" for="cat-weight">Вес (кг):<sup>*</sup></label>
-            <input class="text-input__field" type="text" name="weight" id="cat-weight" placeholder="7" required>
-              </li>
-              <li class="text-input">
-                <label class="text-input__label" for="cat-age">Возраст (лет):<sup>*</sup></label>
-            <input class="text-input__field" type="text" name="age" id="cat-age" placeholder="7" required>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="order__form-type">
-            <ul class="order__form-list">
-              <li class="radiobutton-input">
-                <input class="radiobutton-input__field" type="radio" id="lost-weight" name="choose-program" value="lost-weight" checked>
-                <label class="radiobutton-input__label" for="lost-weight">Похудение</label>
-              </li>
-              <li class="radiobutton-input">
-                <input class="radiobutton-input__field" type="radio" id="weight-gain" name="choose-program" value="weight-gain">
-                <label class="radiobutton-input__label" for="weight-gain">Набор массы</label>
-              </li>
-              <li class="radiobutton-input">
-                <input class="radiobutton-input__field" type="radio" id="help-weight" name="choose-program" value="help-choice">
-                <label class="radiobutton-input__label" for="help-weight">Не знаю (нужен ваш совет)</label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="order__form-type">
-            <p class="order__form-legend order__form-legend--item">Контактные данные <br> (владельца кота)</p>
-            <ul class="order__form-list">
-              <li class="text-input">
+          <div class="order__form-wrapper">
+            <fieldset class="order__form-type order__form-type--text">
+              <ul class="order__form-list text-input">
+                <li class="text-input__item">
+                  <label class="text-input__label" for="cat-name">Имя:<sup>*</sup></label>
+              <input class="text-input__field" type="text" name="name" id="cat-name" placeholder="Барсик" required>
+                </li>
+                <li class="text-input__item">
+                  <label class="text-input__label" for="cat-weight">Вес (кг):<sup>*</sup></label>
+              <input class="text-input__field" type="text" name="weight" id="cat-weight" placeholder="7" required>
+                </li>
+                <li class="text-input__item">
+                  <label class="text-input__label" for="cat-age">Возраст (лет):<sup>*</sup></label>
+              <input class="text-input__field" type="text" name="age" id="cat-age" placeholder="7" required>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="order__form-type order__form-type--radiobutton">
+              <ul class="order__form-list radiobutton-input">
+                <li class="radiobutton-input__item">
+                  <input class="radiobutton-input__field" type="radio" id="lost-weight" name="choose-program" value="lost-weight" checked>
+                  <label class="radiobutton-input__label" for="lost-weight">Похудение</label>
+                </li>
+                <li class="radiobutton-input__item">
+                  <input class="radiobutton-input__field" type="radio" id="weight-gain" name="choose-program" value="weight-gain">
+                  <label class="radiobutton-input__label" for="weight-gain">Набор массы</label>
+                </li>
+                <li class="radiobutton-input__item">
+                  <input class="radiobutton-input__field" type="radio" id="help-weight" name="choose-program" value="help-choice">
+                  <label class="radiobutton-input__label" for="help-weight">Не знаю (нужен ваш совет)</label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <fieldset class="order__form-type order__form-type--contacts">
+            <p class="order__form-legend order__form-legend--item">Контактные данные (владельца кота)</p>
+            <ul class="order__form-list text-input text-input--contacts">
+              <li class="text-input__item">
                 <label class="text-input__label" for="owner-name">E-mail:<sup>*</sup></label>
                 <input class="text-input__field text-input__field--email" type="email" id="owner-name" name="owner" placeholder="kuklachev@gmail.com" required>
               </li>
-              <li class="text-input">
+              <li class="text-input__item">
                 <label class="text-input__label" for="owner-phone">Телефон:<sup>*</sup></label>
                 <input class="text-input__field text-input__field--phone" type="tel" id="owner-phone" name="phone" placeholder="8(960)900-60-90" required>
               </li>
@@ -81,20 +84,20 @@
             <p class="order__form-legend order__form-legend--item">Комментарий</p>
             <textarea class="textarea-field" name="comments-field" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота"></textarea>
             <p class="order__form-legend order__form-legend--item">Дополнительно</p>
-            <ul class="order__form-list">
-              <li class="checkbox-input">
+            <ul class="order__form-list checkbox-input">
+              <li class="checkbox-input__item">
                 <input type="checkbox" id="sugar" name="sugar" checked>
                 <label class="checkbox-input__label" for="sugar">Сахарозаменитель</label>
               </li>
-              <li class="checkbox-input">
+              <li class="checkbox-input__item">
                 <input type="checkbox" id="water" name="water">
                 <label class="checkbox-input__label" for="water">Питьевая вода</label>
               </li>
-              <li class="checkbox-input">
+              <li class="checkbox-input__item">
                 <input type="checkbox" id="milk" name="milk">
                 <label class="checkbox-input__label" for="milk">Молоко</label>
               </li>
-              <li class="checkbox-input">
+              <li class="checkbox-input__item">
                 <input type="checkbox" id="vitamins" name="vitamins">
                 <label class="checkbox-input__label" for="vitamins">Витамины</label>
               </li>
@@ -111,7 +114,7 @@
       <section class="page-footer__contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <div class="page-footer__contacts-wrapper">
-          <p class="page-footer__contacts--invite">Приглашаем к сотрудничеству дилеров!</p>
+          <p class="page-footer__contacts--invite">Приглашаем <br> к сотрудничеству <br> дилеров!</p>
           <p class="page-footer__contacts--address">ул. Большая Конюшенная, д. 19/8
 Санкт-Петербург</p>
         </div>
@@ -144,6 +147,9 @@
         <div class="page-footer__partner">
           <a class="page-footer__partner-link" href="https://htmlacademy.ru/intensive/adaptive">
             <span>Наш пратнер - HTML Academy</span>
+          </a>
+          <a class="page-footer__partner-link-logo">
+            <img src="img/htmlacademy.svg" width="27" height="34" alt="Логотип HTML Academy">
           </a>
         </div>
       </section>
